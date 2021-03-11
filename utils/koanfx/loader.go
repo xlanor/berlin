@@ -1,16 +1,16 @@
 package koanfx
 
 import (
-	"github.com/knadh/koanf/parsers/json"
-	log "github.com/sirupsen/logrus"
 	"github.com/knadh/koanf"
+	"github.com/knadh/koanf/parsers/json"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/file"
+	log "github.com/sirupsen/logrus"
 )
 
 var K *koanf.Koanf
 
-func LoadConfig (){
+func LoadConfig() {
 	f := file.Provider("mock/mock.yaml")
 	// Load YAML config
 	if err := K.Load(f, yaml.Parser()); err != nil {
@@ -39,6 +39,6 @@ func LoadConfig (){
 
 }
 
-func init(){
+func init() {
 	K = koanf.New(".")
 }

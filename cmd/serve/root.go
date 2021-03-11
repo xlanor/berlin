@@ -1,9 +1,9 @@
 package serve
 
 import (
-	"github.com/spf13/cobra"
 	berlin "berlin/cmd/http"
 	koanfx "berlin/utils/koanfx"
+	"github.com/spf13/cobra"
 	"sync"
 )
 
@@ -18,7 +18,7 @@ func serveAll() func(cmd *cobra.Command) {
 
 var serveCmd = &cobra.Command{
 	Use:   "serve",
-	Short: "Run OMS Server",
+	Short: "Run Berlin HTTP Tracker",
 	Run: func(cmd *cobra.Command, args []string) {
 		koanfx.LoadConfig()
 		serveAll()(cmd)
